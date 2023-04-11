@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../assets/main-logo.jpeg';
+import logo2 from '../assets/main-logo-blue-transparent.png';
 import './NavBarStyles.css';
 
 const NavBar = () => {
@@ -8,7 +9,7 @@ const NavBar = () => {
     <header className='header'>
       <div className="logo">
       <Link href="/">
-        <Image src={logo} alt="Dumbell with app name Body Buddy beside to the right."></Image>
+        <Image src={logo2} alt="Dumbell with app name Body Buddy beside to the right."></Image>
       </Link>
       </div>
       <div className="links">

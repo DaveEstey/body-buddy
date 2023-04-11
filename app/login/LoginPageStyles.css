@@ -1,0 +1,16 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col1 {
+  height: 100vh;
+  width: 33%;
+  background-color: green;
+}
+
+.col2 {
+  height: 100vh;
+  width: 67%;
+  background-color: blue;
+}
