@@ -8,7 +8,7 @@ const NavBar = () => {
     <header className='header'>
       <div className="logo">
       <Link href="/">
-        <Image src={logo} alt="Body Buddy Logo" priority></Image>
+        <Image src={logo} alt="Dumbell with app name Body Buddy beside to the right."></Image>
       </Link>
       </div>
       <div className="links">
