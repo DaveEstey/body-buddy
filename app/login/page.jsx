@@ -43,11 +43,15 @@ const LoginPage = () => {
     e.preventDefault();
   }
 
+  const handleLogIn = (e) => {
+    e.preventDefault();
+  }
+
   return (
-    // Following form created by Florin Pop and posted at https://freefrontend.com/css-login-forms/ JavaScript refactored for React by dev team.
+    // Following form created by Florin Pop and posted at https://freefrontend.com/css-login-forms/ JavaScript refactored for React by Body Buddy dev team.
     <div className={isActive ? "container" : "container right-panel-active" } id="container">
 	    <div className="form-container sign-up-container">
-		    <form action="#">
+		    <form onSubmit={handleSignUp}>
 			    <h1>Create Account</h1>
 			    {/* <div class="social-container">
             <Link></Link>
@@ -63,10 +67,10 @@ const LoginPage = () => {
 					<label htmlFor="password">Password</label>
           <input type="password" id="password" name="password" value={registrationData.password} onChange={updateRegistration}/>
 					<button>Sign Up</button>
-		    </form> 
+		    </form>
 	    </div>
 	    <div className="form-container sign-in-container">
-		    <form action="#">
+		    <form onSubmit={handleLogIn}>
           <h1>Sign in</h1>
           {/* <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -75,7 +79,7 @@ const LoginPage = () => {
           </div> */}
           <span>or use your account</span>
           <label htmlFor="logInEmail">Email</label>
-          <input type="email" id="logInemail" name="logInEmail" value={logInData.email} onChange={updateLogIn}/>
+          <input type="email" id="logInEmail" name="logInEmail" value={logInData.email} onChange={updateLogIn}/>
           <label htmlFor="logInPassword">Password</label>
           <input type="password" id="logInPassword" name="logInPassword" value={logInData.password} onChange={updateLogIn}/>
           <a href="#">Forgot your password?</a>
