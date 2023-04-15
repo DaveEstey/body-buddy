@@ -17,7 +17,7 @@ const NavBar = () => {
           <span>Log In</span>
           <div className="border full-rounded"></div>
         </Link>
-        <Link href="/signup" className="btn-signup full-rounded">
+        <Link href="/login" className="btn-signup full-rounded">
           <span>Sign Up</span>
           <div className="border full-rounded"></div>
         </Link>
