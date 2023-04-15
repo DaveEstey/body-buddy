@@ -18,6 +18,7 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center center;
+  z-index: -1;
 }
 
 /* .btn & all sub/pseudo classes and .full-rounded made by felipesntr, https://uiverse.io/felipesntr/dangerous-deer-2  */

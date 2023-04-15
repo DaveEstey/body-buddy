@@ -234,6 +234,7 @@ input {
   .sign-in-container, .sign-up-container {
     position: relative;
     width: 100%;
+		height: 100%;
     padding: 0 15px;
     margin-bottom: 40px;
     opacity: 1;
