@@ -3,9 +3,10 @@ h1 {
 }
 
 .sample-workouts {
-  background-color: #618b91;
-  background: -webkit-linear-gradient(to bottom right, #81fafa, #618b91);
-	background: linear-gradient(to bottom right, #81fafa, #618b91);
+  background-color: #fff;
+  /* background: -webkit-linear-gradient(to bottom right, #81fafa, #618b91);
+	background: linear-gradient(to bottom right, #81fafa, #618b91); */
+  padding: 4rem;
 }
 
 .workout-card-container {

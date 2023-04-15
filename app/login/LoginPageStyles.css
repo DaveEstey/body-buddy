@@ -1,13 +1,12 @@
 /* Following form created by Florin Pop and posted at https://freefrontend.com/css-login-forms/ Some CSS refactored to fit Body Buddy design scheme. */
 
-body {
+.login-bg {
 	background: #f6f5f7;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	height: 100vh;
-	margin: -20px 0 50px;
 	background-image: url("../assets/gym.jpg");
 	background-size: cover;
 	background-color: #fff;
