@@ -7,7 +7,7 @@
   background: -webkit-linear-gradient(to right, #81bffa, #81d4fa);
 	background: linear-gradient(to right, #81bffa, #81d4fa);
   text-align: center;
-  position: relative;
+  /* position: relative; */
 }
 
 .top-bar h1 {
@@ -35,6 +35,22 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.workout-planner {
+  text-align: center;
+  width: 25vw;
+  margin: auto;
+  border: outset 3px;
+  border-radius: 14px;
+  transform: translateY(-370px);
+  background-color: #fff;
+  opacity: 0.6;
+}
+
+.workout-planner a {
+  position: absolute;
+  transform: translate(-122px, -10px);
 }
 
 @media screen and (max-width: 660px) {

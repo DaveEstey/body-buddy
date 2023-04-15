@@ -1,4 +1,7 @@
-import './ProfilePageStyles.css'
+import './ProfilePageStyles.css';
+import fitnessClass from '../assets/class.jpg';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const ProfilePage = () => {
   return (
@@ -16,6 +19,22 @@ const ProfilePage = () => {
             <h4>Height</h4>
             <h4>Weight</h4>
           </div>
+        </div>
+      </div>
+      <div>
+        <Image
+        className="lower-image"
+          src={fitnessClass}
+          alt="Two people performing box jumps"
+          priority
+          >
+        </Image>
+        <div className="workout-planner">
+          <h1>Ready to Begin?</h1>
+          <h4>Click below to use the workout planner!</h4>
+          <Link href="/" className='btn full-rounded'>
+            Workout Planner
+          </Link>
         </div>
       </div>
     </div>
