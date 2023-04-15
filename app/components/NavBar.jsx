@@ -21,6 +21,10 @@ const NavBar = () => {
           <span>Sign Up</span>
           <div className="border full-rounded"></div>
         </Link>
+        <Link href="/workout" className="btn-signup full-rounded">
+          <span>Workout</span>
+          <div className="border full-rounded"></div>
+        </Link>
       </div>
     </header>
   )
