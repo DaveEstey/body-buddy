@@ -1,0 +1,18 @@
+h1 {
+  text-align: center;
+}
+
+.sample-workouts {
+  background-color: #618b91;
+  background: -webkit-linear-gradient(to bottom right, #81fafa, #618b91);
+	background: linear-gradient(to bottom right, #81fafa, #618b91);
+}
+
+.workout-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  width: 70vw;
+  margin: auto;
+}
