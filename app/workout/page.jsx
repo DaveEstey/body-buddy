@@ -1,4 +1,5 @@
 import React from 'react'
+// import ExerciseCard from '../components/ExerciseCard'
 
 const fetchRepo = async () => {
     const userInput = 'biceps'
@@ -16,9 +17,18 @@ const WorkoutPage = async () => {
  const repo = await fetchRepo();
  console.log(repo);
   return (
-    <div>
-      <h1>{repo.map((repo)=> repo.name)}</h1>
-    </div>
+    <div className="container">
+    
+      {repo.map((repo) => (
+       <div>
+        <h1>{repo.name}</h1>
+        <h2>{repo.type}</h2>
+        <h2>{repo.muscle}</h2> 
+        </div>
+      ))
+      }
+      </div>
+   
   )
 }
 
