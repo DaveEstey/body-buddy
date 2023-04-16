@@ -22,11 +22,13 @@ model users {
   lastName    String
   sex         String
   weight      Int
-  workouts_id String[]
+  workouts    workouts[]
 }
 
 model workouts {
   id        String              @id @default(auto()) @map("_id") @db.ObjectId
   exercises WorkoutsExercises[]
   name      String
+  user      users @relation(fields: [userId], references: [id])
+  userId    String @db.ObjectId
 }
