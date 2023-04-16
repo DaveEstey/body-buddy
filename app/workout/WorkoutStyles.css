@@ -1,0 +1,23 @@
+.planner-hero {
+  width: 100%;
+  height: 25vh;
+  object-fit: cover;
+  object-position: center center;
+  z-index: -1;
+}
+
+.workout-container {
+  display: flex;
+}
+
+.col-1 {
+  width: 25%;
+  padding: 0 10px;
+  border: solid 1px;
+}
+
+.col-2 {
+  width: 75%;
+  padding: 0 10px;
+  border: solid 1px;
+}
