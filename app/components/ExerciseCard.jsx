@@ -1,9 +1,9 @@
-import React from 'react'
-
-const ExerciseCard = () => {
+const ExerciseCard = (props) => {
   return (
-    <div>
-      
+    <div className="exercise-card">
+      <h1>{props.name}</h1>
+      <h2>{props.type}</h2>
+      <h2>{props.muscle}</h2> 
     </div>
   )
 }
