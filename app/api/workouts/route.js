@@ -1,6 +1,7 @@
 import { getWorkouts, createWorkout } from '../../../lib/primsa/workouts'
 import { NextResponse } from 'next/server'
 
+// Get all workouts
 export async function GET() {
     console.log("Calling method to get all workouts")
     try {
@@ -12,7 +13,7 @@ export async function GET() {
         return NextResponse.json({ error: error.message })
     }
 }
-
+// Create a new workout
 export async function POST(req) {
     console.log("Calling method to create a new workout")
     try {

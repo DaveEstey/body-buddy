@@ -1,6 +1,7 @@
 import { editUser, getUserById, deleteUser } from '../../../../lib/primsa/users'
 import { NextResponse } from 'next/server'
 
+// @route   GET api/users/:userId
 export async function GET(req, { params }) {
     console.log("Calling method to get user by id")
     try {
@@ -14,7 +15,7 @@ export async function GET(req, { params }) {
         return NextResponse.json({ error: error.message })
     }
 }
-
+// @route   PUT api/users/:userId
 export async function PUT(req, { params }) {
     console.log("Calling method to edit user by id")
     try {
@@ -30,7 +31,7 @@ export async function PUT(req, { params }) {
         return NextResponse.json({ error: error.message })
     }
 }
-
+// @route   DELETE api/users/:userId
 export async function DELETE(req, { params }) {
     console.log("Calling method to delete user by id")
     try {
