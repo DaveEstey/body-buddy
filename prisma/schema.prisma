@@ -7,13 +7,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+type WorkoutsExercises {
+  name String
+  reps Int
+  sets Int
+}
+
 model users {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  firstName String
-  lastName  String
-  email     String @unique
-  weight    Int
-  height    Int
-  age       Int
-  sex       String
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  age         Int
+  email       String
+  firstName   String
+  height      Int
+  lastName    String
+  sex         String
+  weight      Int
+  workouts_id String[]
+}
+
+model workouts {
+  id        String              @id @default(auto()) @map("_id") @db.ObjectId
+  exercises WorkoutsExercises[]
+  name      String
 }
