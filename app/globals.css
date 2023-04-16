@@ -10,6 +10,22 @@ body {
   font-family: 'Outfit', sans-serif;
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #fff;
+  opacity: 0.9;
+}
+
 .main-hero img {
   top: 0px;
   left: 0px;
@@ -28,6 +44,24 @@ body {
   z-index: -1;
 }
 
+.workout-planner {
+  text-align: center;
+  width: 25vw;
+  margin: auto;
+  padding: 1rem;
+  border: outset 3px;
+  border-radius: 14px;
+  transform: translateY(-370px);
+  background-color: #fff;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.lower-sign-up a {
+  position: absolute;
+  transform: translate(-90px, 10px);
+}
+
 /* .btn & all sub/pseudo classes and .full-rounded made by felipesntr, https://uiverse.io/felipesntr/dangerous-deer-2  */
 .btn {
   font-size: 16px;
@@ -40,15 +74,15 @@ body {
   box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
  }
  
- .btn:active {
+.btn:active {
   transform: scale(0.95);
- }
+}
  
- .btn span {
+.btn span {
   color: #464646;
- }
+}
  
- .btn .border {
+.btn .border {
   position: absolute;
   border: 0.15em solid #fc9e4f;
   transition: all 0.3s 0.08s linear;
@@ -57,20 +91,37 @@ body {
   width: 9em;
   height: 3em;
   transform: translate(-50%, -50%);
- }
+}
  
- .btn:hover .border {
+.btn:hover .border {
   display: block;
   width: 9.9em;
   height: 3.7em;
- }
+}
  
- .full-rounded {
+.full-rounded {
   border-radius: 2em;
- }
+}
 
- @media screen and (max-width: 660px) {
+@media screen and (max-width: 660px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: static;
+  }
+  
   .main-hero img {
     height: 70vh;
   }
- }
+
+  .workout-planner {
+    width: 80vw;
+    margin-top: 5rem;
+  }
+
+  .lower-sign-up a {
+  transform: translate(-75px, 15px);
+  }
+}
