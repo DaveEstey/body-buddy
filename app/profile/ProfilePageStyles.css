@@ -45,7 +45,9 @@
   border-radius: 14px;
   transform: translateY(-370px);
   background-color: #fff;
-  opacity: 0.6;
+  /* color: #618b91; */
+  font-weight: 300;
+  opacity: 0.8;
 }
 
 .workout-planner a {
@@ -64,5 +66,14 @@
   
   .stats {
     width: 65vw;
+  }
+
+  .workout-planner {
+    width: 70vw;
+    transform: translateY(-220px);
+  }
+
+  .workout-planner a {
+    transform: translate(-90px, 0);
   }
 }

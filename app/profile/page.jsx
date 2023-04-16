@@ -32,7 +32,7 @@ const ProfilePage = () => {
         <div className="workout-planner">
           <h1>Ready to Begin?</h1>
           <h4>Click below to use the workout planner!</h4>
-          <Link href="/" className='btn full-rounded'>
+          <Link href="/workout" className='btn full-rounded'>
             Workout Planner
           </Link>
         </div>
