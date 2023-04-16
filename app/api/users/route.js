@@ -1,4 +1,4 @@
-import { getUsers, createUser } from '../../../lib/prisma/users'
+import { getUsers, createUser } from '../../../lib/primsa/users'
 import { NextResponse } from 'next/server'
 
 export async function GET() {
@@ -13,10 +13,10 @@ export async function GET() {
     }
 }
 
-export async function POST(request) {
+export async function POST(req) {
     console.log("Calling method to create a new user")
     try {
-        const body = await request.json()
+        const body = await req.json()
         const { user, error } = await createUser(body)
         if (error) throw new Error(error)
         return NextResponse.json({ user }, { status: 200 })
