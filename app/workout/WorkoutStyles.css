@@ -21,3 +21,21 @@
   padding: 0 10px;
   border: solid 1px;
 }
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.ex-search {
+  width: 80%;
+  height: 2rem;
+  align-self: center;
+  margin: 1rem;
+}
+
+.ex-button {
+  width: 25%;
+  align-self: center;
+  cursor: pointer;
+}
