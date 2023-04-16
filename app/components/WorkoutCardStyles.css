@@ -18,3 +18,11 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+@media screen and (max-width: 660px) {
+  .workout-card {
+    width: 85vw;
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+}

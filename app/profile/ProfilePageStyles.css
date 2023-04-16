@@ -37,7 +37,7 @@
   justify-content: space-between;
 }
 
-.workout-planner {
+/* .workout-planner {
   text-align: center;
   width: 25vw;
   margin: auto;
@@ -45,14 +45,13 @@
   border-radius: 14px;
   transform: translateY(-370px);
   background-color: #fff;
-  /* color: #618b91; */
   font-weight: 300;
   opacity: 0.8;
-}
+} */
 
-.workout-planner a {
+.profile-lower-btn a {
   position: absolute;
-  transform: translate(-122px, -10px);
+  transform: translate(-122px, 10px);
 }
 
 @media screen and (max-width: 660px) {
@@ -70,10 +69,10 @@
 
   .workout-planner {
     width: 70vw;
-    transform: translateY(-220px);
+    transform: translateY(-350px);
   }
 
-  .workout-planner a {
-    transform: translate(-90px, 0);
+  .profile-lower-btn a {
+    transform: translate(-90px, 10px);
   }
 }

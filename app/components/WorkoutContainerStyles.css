@@ -17,3 +17,17 @@ h1 {
   width: 70vw;
   margin: auto;
 }
+
+@media screen and (max-width: 660px) {
+  .sample-workouts {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .workout-card-container {
+    flex-direction: column;
+    justify-content: center;
+    width: 90vw;
+  }
+}
