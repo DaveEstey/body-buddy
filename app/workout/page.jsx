@@ -16,7 +16,7 @@ const WorkoutPage = () => {
     const data = await fetch(
       `https://api.api-ninjas.com/v1/exercises?muscle=${userInput}`,
       {
-        headers: { 'X-Api-Key': 'G2eNCdx3VuH8TLfQGT8EpQ==KhaMg8wKYcZYoA40' },
+        headers: { 'X-Api-Key': 'WGoyifcVpn2C4Xum3XF7uw==zYQeXPtUXguKkvSj' },
       }
     );
     const repoData = await data.json();

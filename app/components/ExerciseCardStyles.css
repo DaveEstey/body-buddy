@@ -1,0 +1,17 @@
+.exercise-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1rem;
+}
+
+.exercise-card {
+  text-align: center;
+  width: 20vw;
+  padding: 1rem;
+  border: outset 3px;
+  border-radius: 14px;
+  background-color: #fff;
+  font-weight: 300;
+  /* opacity: 0.8; */
+}
