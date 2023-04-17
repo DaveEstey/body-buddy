@@ -13,11 +13,64 @@
 .col-1 {
   width: 25%;
   padding: 0 10px;
-  border: solid 1px;
+  /* border: solid 1px; */
 }
 
 .col-2 {
   width: 75%;
   padding: 0 10px;
-  border: solid 1px;
+  /* border: solid 1px; */
+}
+
+.exercises {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #618b91;
+	background: -webkit-linear-gradient(to bottom right, #94cdd4, #618b91);
+	background: linear-gradient(to bottom right, #9fcdd4, #618b91);
+  border-radius: 14px;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.ex-search {
+  width: 80%;
+  height: 2rem;
+  align-self: center;
+  margin: 1rem;
+}
+
+.ex-button {
+  width: 128px;
+  align-self: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 660px) {
+  .workout-container {
+    flex-direction: column;
+  }
+
+  .col-1 {
+    width: 100%;
+    height: auto;
+  }
+
+  .col-2 {
+    width: 100%;
+    height: auto;
+  }
+
+  .exercises {
+    flex-direction: column;
+  }
+
+  .ex-button {
+    width: 128px;
+  }
 }

@@ -16,28 +16,36 @@ const WorkoutPage = () => {
     const data = await fetch(
       `https://api.api-ninjas.com/v1/exercises?muscle=${userInput}`,
       {
-        headers: { 'X-Api-Key': 'G2eNCdx3VuH8TLfQGT8EpQ==KhaMg8wKYcZYoA40' },
+        headers: { 'X-Api-Key': 'WGoyifcVpn2C4Xum3XF7uw==zYQeXPtUXguKkvSj' },
       }
     );
     const repoData = await data.json();
     setRepo(repoData);
+
+    console.log(repoData);
   };
 
   return (
     <div className="workout-page">
       <div>
-        <Image className="planner-hero" src={Hero} alt="Loading a heavy barbell." />
+        <Image className="planner-hero" src={Hero} alt="Loading a heavy barbell." priority />
       </div>
       <div className="workout-container">
-        <div className="col-1">
+        <div className="col-1"> 
           <div className="search-bar">
+            <h2>Search the Exercise Database</h2>
+            <h3>Enter a muscle group in the box below.</h3>
             <input
+              className="ex-search"
               type="text"
               placeholder="Search exercises"
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
             />
-            <button onClick={handleSearch}>Search</button>
+            <button className="btn full-rounded ex-button border" type="submit" onClick={handleSearch}>Search
+        
+              <div className="border full-rounded"></div>
+            </button>
           </div>
         </div>
         <div className="col-2">
