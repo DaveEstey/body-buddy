@@ -31,7 +31,6 @@
 	background: -webkit-linear-gradient(to bottom right, #94cdd4, #618b91);
 	background: linear-gradient(to bottom right, #9fcdd4, #618b91);
   border-radius: 14px;
-  /* background-image: linear-gradient(to bottom right,#9fcdd4 #618b91); */
 }
 
 .search-bar {
@@ -47,7 +46,31 @@
 }
 
 .ex-button {
-  width: 25%;
+  width: 20%;
   align-self: center;
   cursor: pointer;
+}
+
+@media screen and (max-width: 660px) {
+  .workout-container {
+    flex-direction: column;
+  }
+
+  .col-1 {
+    width: 100%;
+    height: auto;
+  }
+
+  .col-2 {
+    width: 100%;
+    height: auto;
+  }
+
+  .exercises {
+    flex-direction: column;
+  }
+
+  .ex-button {
+    width: 36%;
+  }
 }

@@ -57,9 +57,9 @@ header {
   opacity: 0.8;
 }
 
-.lower-sign-up a {
-  position: absolute;
-  transform: translate(-90px, 10px);
+.lower-sign-up {
+ display: flex;
+ justify-content: center;
 }
 
 /* .btn & all sub/pseudo classes and .full-rounded made by felipesntr, https://uiverse.io/felipesntr/dangerous-deer-2  */
@@ -119,9 +119,5 @@ header {
   .workout-planner {
     width: 80vw;
     margin-top: 5rem;
-  }
-
-  .lower-sign-up a {
-  transform: translate(-75px, 15px);
   }
 }
