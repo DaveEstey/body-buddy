@@ -42,8 +42,8 @@ const WorkoutPage = () => {
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
             />
-            <button className="btn full-rounded ex-button" type="submit" onClick={handleSearch}>
-              <span>Search</span>
+            <button className="btn full-rounded ex-button border" type="submit" onClick={handleSearch}>Search
+        
               <div className="border full-rounded"></div>
             </button>
           </div>
