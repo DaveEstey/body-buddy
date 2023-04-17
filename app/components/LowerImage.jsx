@@ -16,8 +16,9 @@ const LowerImage = () => {
           <h1>Begin your fitness journey today!</h1>
           <h4>Click below to sign up!</h4>
           <div className="lower-sign-up">
-            <Link href="/workout" className="btn full-rounded lower-sign-up">
-              Sign Up
+            <Link href="/login" className="btn-signup full-rounded">
+              <span>Sign Up</span>
+              <div className="border full-rounded"></div>
             </Link>
           </div>
         </div>

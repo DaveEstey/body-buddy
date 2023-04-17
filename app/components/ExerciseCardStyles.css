@@ -13,5 +13,10 @@
   border-radius: 14px;
   background-color: #fff;
   font-weight: 300;
-  /* opacity: 0.8; */
+}
+
+@media screen and (max-width: 660px) {
+  .exercise-card {
+    width: 85vw;
+  }
 }
