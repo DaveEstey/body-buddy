@@ -33,8 +33,9 @@ const ProfilePage = () => {
           <h1>Ready to Begin?</h1>
           <h4>Click below to use the workout planner!</h4>
           <div className="profile-lower-btn">
-            <Link href="/workout" className='btn full-rounded'>
-              Workout Planner
+            <Link href="/workout" className='btn-signup full-rounded'>
+              <span>Planner</span>
+              <div className="border full-rounded"></div>
             </Link>
           </div>
         </div>
