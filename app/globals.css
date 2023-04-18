@@ -36,7 +36,9 @@ header {
   z-index: -1;
 }
 
+
 .lower-image {
+  line-height: 0px;
   width: 100%;
   height: 50vh;
   object-fit: cover;

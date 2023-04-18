@@ -5,7 +5,7 @@ import Link from 'next/link';
 const LowerImage = () => {
   return (
     <figure>
-      <div>
+      <div className="lower-image-container">
         <Image
           className="lower-image"
           src={stretch}
