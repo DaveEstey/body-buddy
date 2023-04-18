@@ -17,7 +17,7 @@ header {
   align-items: center;
   padding-bottom: 0.5rem;
   width: 100%;
-  height: auto;
+  height: 112px;
   position: fixed;
   top: 0;
   left: 0;
@@ -106,14 +106,6 @@ header {
 }
 
 @media screen and (max-width: 660px) {
-  header {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: static;
-  }
-  
   .main-hero img {
     height: 70vh;
   }
