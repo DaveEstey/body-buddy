@@ -15,6 +15,7 @@ type WorkoutsExercises {
 
 model users {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  password    String? /// @encrypted
   age         Int
   email       String
   firstName   String
@@ -26,7 +27,7 @@ model users {
 }
 
 model workouts {
-  id        String              @id @default(auto()) @map("_id") @db.ObjectId
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
   exercises WorkoutsExercises[]
   name      String
   user      users @relation(fields: [userId], references: [id])

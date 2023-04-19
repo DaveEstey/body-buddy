@@ -1,5 +1,5 @@
-import { editUser, getUserById, deleteUser } from '../../../../lib/primsa/users'
 import { NextResponse } from 'next/server'
+import { deleteUser, editUser, getUserById } from '../../../../lib/prisma/users'
 
 export async function GET(req, { params }) {
     console.log("Calling method to get user by id")

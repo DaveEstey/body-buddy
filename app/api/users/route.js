@@ -1,5 +1,5 @@
-import { getUsers, createUser } from '../../../lib/primsa/users'
 import { NextResponse } from 'next/server'
+import { createUser, getUsers } from '../../../lib/prisma/users'
 
 export async function GET() {
     console.log("Calling method to get all users")
