@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useState } from "react";
 import ExerciseCard from "../components/ExerciseCard";
@@ -6,7 +6,9 @@ import Hero from "../assets/barbell.jpg";
 import "./WorkoutStyles.css";
 import Image from "next/image";
 import WorkoutEditCard from "../components/WorkoutEditCard";
-import { NextResponse } from "next/server";
+import { FaTimes } from 'react-icons/fa'
+
+
 
 const WorkoutPage = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -18,6 +20,7 @@ const WorkoutPage = () => {
   const handleSearch = async () => {
     if (!searchInput) return;
     const userInput = searchInput.trim();
+   
     const data = await fetch(
       `https://api.api-ninjas.com/v1/exercises?muscle=${userInput}`,
       {
@@ -50,8 +53,17 @@ const WorkoutPage = () => {
     setFormData(newFormData);
   };
 
+ // const redirectPage = () => {
+  //  if (formData) 
+   // else prompt("You need to Name and add an exercise to the wrokout!"); 
+ // }
+
   const handleWorkoutSubmit = async () => {
+    if (!formData|| !workoutTitle) {
+      return  
+    }
     try {
+    
       const res = await fetch("/api/workouts", {
         method: "POST",
         headers: {
@@ -64,12 +76,13 @@ const WorkoutPage = () => {
         }),
       });
       const data = await res.json();
-      console.log(data);
+      window.location.href('/profile')
+      
+   
+
     } catch (error) {
       console.error(error);
     }
-    console.log(formData);
-    console.log(JSON.stringify(formData));
   };
 
   return (
@@ -104,7 +117,10 @@ const WorkoutPage = () => {
             </button>
           </div>
           {buttonShow && (
+              <>
+              <h2>Choose Workout Title</h2>
               <input value= {workoutTitle} type="string" onChange={(e) => setWorkoutTitle(e.target.value)}/>
+              </>
             )}
           <div>
             {formData &&
@@ -120,10 +136,14 @@ const WorkoutPage = () => {
                       handleWeightChange={handleWeightChange}
                     />
                   </div>
+                
                 );
               })}
             {buttonShow && (
-              <button onClick={() => handleWorkoutSubmit()}>
+              <button onClick={() => {
+                handleWorkoutSubmit()
+              }
+              }>
                 Submit Workout
               </button>
             )}
