@@ -1,45 +1,25 @@
 import './WorkoutCardStyles.css'
 
-const WorkoutCard = () => {
+const WorkoutCard = ({ workout }) => {
   return (
     <div className="workout-container">
       <div className="workout-card">
-        <h3>Workout Name</h3> {/* Will be workout.name */}
-        {/* Will be workout.exercises.name or whatever correct db path is. Will be a map function that will
-        insert however many exercises are in the workout. */}
-        <div className="exercise">
-          <p>Exercise Name</p>
-          <p>Sets</p>
-          <p>Reps</p>
+        <h3>{workout.name}</h3> {/* Will be workout.name */}
+        <div className='exercise'>
+          <h4>Exercise Name</h4>
+          <h4>Sets</h4>
+          <h4>Repetitions</h4>
         </div>
-        <div className="exercise">
-          <p>Exercise Name</p>
-          <p>Sets</p>
-          <p>Reps</p>
-        </div>
-        <div className="exercise">
-          <p>Exercise Name</p>
-          <p>Sets</p>
-          <p>Reps</p>
-        </div>
-        <div className="exercise">
-          <p>Exercise Name</p>
-          <p>Sets</p>
-          <p>Reps</p>
-        </div>
-        <div className="exercise">
-          <p>Exercise Name</p>
-          <p>Sets</p>
-          <p>Reps</p>
-        </div>
-        <div className="exercise">
-          <p>Exercise Name</p>
-          <p>Sets</p>
-          <p>Reps</p>
-        </div>
+        {workout.exercises.map((exercise, index) => (
+          <div key={index} className="exercise">
+            <p>{exercise.name}</p>
+            <p>{exercise.sets}</p>
+            <p>{exercise.reps}</p>
+          </div>
+        ))}
       </div>
     </div>
-  )
+  );
 }
 
 export default WorkoutCard
