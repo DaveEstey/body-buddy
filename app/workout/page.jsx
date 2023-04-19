@@ -159,19 +159,21 @@ const WorkoutPage = () => {
             {repo &&
               repo.map((val, index) => {
                 return (
-                  <button
-                    value={index}
-                    onClick={() => {
-                      handleCardClick(val.name), showButton(true);
-                    }}
-                  >
-                    <ExerciseCard
-                      key={index}
-                      name={val.name}
-                      type={val.type}
-                      muscle={val.muscle}
-                    />
-                  </button>
+                  <>
+                    <button
+                      value={index}
+                      onClick={() => {
+                        handleCardClick(val.name), showButton(true);
+                      }}
+                    >
+                      <ExerciseCard
+                        key={index}
+                        name={val.name}
+                        type={val.type}
+                        muscle={val.muscle}
+                      />
+                    </button>
+                  </>
                 );
               })}
           </div>
