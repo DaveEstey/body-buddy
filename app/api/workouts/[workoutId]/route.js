@@ -1,5 +1,5 @@
-import { editWorkout, getWorkoutById, deleteWorkout } from '../../../../lib/primsa/workouts'
 import { NextResponse } from 'next/server'
+import { deleteWorkout, editWorkout, getWorkoutById } from '../../../../lib/prisma/workouts'
 
 export async function GET(req, { params }) {
     console.log("Calling method to get workout by id")
