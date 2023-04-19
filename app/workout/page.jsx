@@ -106,7 +106,6 @@ const WorkoutPage = () => {
             {formData &&
               formData.map((val, index) => {
                 return (
-                  <>
                     <WorkoutEditCard
                       key={index}
                       index={index}
@@ -115,7 +114,6 @@ const WorkoutPage = () => {
                       handleRepChange={handleRepChange}
                       handleWeightChange={handleWeightChange}
                     />
-                  </>
                 );
               })}
             {buttonShow && (
@@ -130,7 +128,6 @@ const WorkoutPage = () => {
             {repo &&
               repo.map((val, index) => {
                 return (
-                  <>
                     <button
                       value={index}
                       onClick={() => {
@@ -144,7 +141,6 @@ const WorkoutPage = () => {
                         muscle={val.muscle}
                       />
                     </button>
-                  </>
                 );
               })}
           </div>
