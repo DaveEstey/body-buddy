@@ -17,13 +17,12 @@ type WorkoutsExercises {
 model users {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   password    String? /// @encrypted
-  age         Int
+  age         Int?
   email       String
-  firstName   String
-  height      Int
-  lastName    String
-  sex         String
-  weight      Int
+  userName    String
+  height      Int?
+  sex         String?
+  weight      Int?
   workouts    workouts[]
 }
 
