@@ -1,5 +1,5 @@
-import { getWorkouts, createWorkout } from '../../../lib/primsa/workouts'
 import { NextResponse } from 'next/server'
+import { createWorkout, getWorkouts } from '../../../lib/prisma/workouts'
 
 export async function GET() {
     console.log("Calling method to get all workouts")

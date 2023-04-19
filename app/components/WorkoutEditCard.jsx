@@ -2,7 +2,7 @@
 import React from 'react'
 
 const WorkoutEditCard = (props) => {
-  const {name, index, sets, reps, handleSetChange, handleRepChange} = props
+  const {name, index, sets, reps, weight, handleSetChange, handleRepChange, handleWeightChange} = props
 
   const inputStyle = {
     width: `${Math.max(7)}ch`,
@@ -17,6 +17,8 @@ const WorkoutEditCard = (props) => {
           <input style={inputStyle} index={index} type="number" value={sets} onChange={(e) => handleSetChange(e, index)}/>
           <h2>reps:</h2>
           <input style={inputStyle} index={index}  type="number" value={reps} onChange={(e) => handleRepChange(e, index)}/>
+          <h2>weight:</h2>
+          <input style={inputStyle} index={index}  type="number" value={weight} onChange={(e) => handleWeightChange(e, index)}/>
         </div>
       </div>
     </>

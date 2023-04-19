@@ -29,7 +29,7 @@ const WorkoutPage = () => {
   };
 
   const handleCardClick = async (data) => {
-    setFormData([...formData, { name: data, sets: 0, reps: 0 }]);
+    setFormData([...formData, { name: data, sets: 0, reps: 0, weight: 0 }]);
   };
 
   const handleSetChange = (e, index) => {
@@ -41,6 +41,12 @@ const WorkoutPage = () => {
   const handleRepChange = (e, index) => {
     const newFormData = JSON.parse(JSON.stringify(formData));
     newFormData[index].reps = Number(e.target.value);
+    setFormData(newFormData);
+  };
+
+  const handleWeightChange = (e, index) => {
+    const newFormData = JSON.parse(JSON.stringify(formData));
+    newFormData[index].weight = Number(e.target.value);
     setFormData(newFormData);
   };
 
@@ -111,6 +117,7 @@ const WorkoutPage = () => {
                       name={val.name}
                       handleSetChange={handleSetChange}
                       handleRepChange={handleRepChange}
+                      handleWeightChange={handleWeightChange}
                     />
                   </div>
                 );
