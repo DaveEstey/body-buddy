@@ -8,9 +8,10 @@ datasource db {
 }
 
 type WorkoutsExercises {
-  name String
-  reps Int
-  sets Int
+  name    String
+  reps    Int
+  sets    Int
+  weight  Int
 }
 
 model users {
