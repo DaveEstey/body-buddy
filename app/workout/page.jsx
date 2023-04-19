@@ -114,7 +114,6 @@ const WorkoutPage = () => {
                       handleRepChange={handleRepChange}
                       handleWeightChange={handleWeightChange}
                     />
-                  </div>
                 );
               })}
             {buttonShow && (
@@ -129,7 +128,6 @@ const WorkoutPage = () => {
             {repo &&
               repo.map((val, index) => {
                 return (
-                  <>
                     <button
                       value={index}
                       onClick={() => {
@@ -143,7 +141,6 @@ const WorkoutPage = () => {
                         muscle={val.muscle}
                       />
                     </button>
-                  </>
                 );
               })}
           </div>
