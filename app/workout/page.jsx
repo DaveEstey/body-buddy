@@ -13,6 +13,7 @@ const WorkoutPage = () => {
   const [repo, setRepo] = useState([]);
   const [formData, setFormData] = useState([]);
   const [buttonShow, showButton] = useState(null);
+  const [workoutTitle, setWorkoutTitle] = useState("");
 
   const handleSearch = async () => {
     if (!searchInput) return;
@@ -51,7 +52,7 @@ const WorkoutPage = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: "My Workout",
+          name: workoutTitle,
           exercises: formData,
           userId: "643c2fd2b8b809c22b6cc7f2",
         }),
@@ -96,6 +97,9 @@ const WorkoutPage = () => {
               <div className="border full-rounded" />
             </button>
           </div>
+          {buttonShow && (
+              <input value= {workoutTitle} type="string" onChange={(e) => setWorkoutTitle(e.target.value)}/>
+            )}
           <div>
             {formData &&
               formData.map((val, index) => {
