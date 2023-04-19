@@ -4,9 +4,11 @@ h1 {
 
 .sample-workouts {
   background-color: #fff;
-  /* background: -webkit-linear-gradient(to bottom right, #81fafa, #618b91);
-	background: linear-gradient(to bottom right, #81fafa, #618b91); */
   padding: 4rem;
+}
+
+.sample-workouts h1 {
+  margin-bottom: 1rem;
 }
 
 .workout-card-container {
@@ -14,7 +16,7 @@ h1 {
   flex-direction: row;
   justify-content: space-around;
   text-align: center;
-  width: 70vw;
+  width: 80vw;
   margin: auto;
 }
 

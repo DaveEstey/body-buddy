@@ -56,8 +56,8 @@ const LoginPage = () => {
                 <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
               </div> */}
-              <span>or use your email for registration</span>
-              <label htmlFor="name">Name</label>
+              <span>Choose a username and email for registration</span>
+              <label htmlFor="name">Username</label>
               <input type="text" id="name" name="name" value={registrationData.name} onChange={updateRegistration}/>
               <label htmlFor="email">Email</label>
               <input type="email" id="email" name="email" value={registrationData.email} onChange={updateRegistration}/>
