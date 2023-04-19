@@ -33,36 +33,36 @@ const WorkoutPage = () => {
 
   const handleSetChange = (e, index) => {
     const newFormData = JSON.parse(JSON.stringify(formData));
-    newFormData[index].sets = e.target.value;
+    newFormData[index].sets = Number(e.target.value);
     setFormData(newFormData);
   };
 
   const handleRepChange = (e, index) => {
     const newFormData = JSON.parse(JSON.stringify(formData));
-    newFormData[index].reps = e.target.value;
+    newFormData[index].reps = Number(e.target.value);
     setFormData(newFormData);
   };
 
   const handleWorkoutSubmit = async () => {
-
     try {
-    const res = await fetch("/api/workouts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body:  {name: "My Workout", exercises: ["JSON.stringify([formData])"], userId: "643c2fd2b8b809c22b6cc7f2"}
-    });
-    console.log(res)
-    if (error) throw new Error(error)
-    
-    return NextResponse.json({ res }, { status: 200 })
-}
-    catch (error) {
-      console.log(error)
-    return NextResponse.json({ error: error.message })
-}
-
+      const res = await fetch("/api/workouts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: "My Workout",
+          exercises: formData,
+          userId: "643c2fd2b8b809c22b6cc7f2",
+        }),
+      });
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+    console.log(formData);
+    console.log(JSON.stringify(formData));
   };
 
   return (
