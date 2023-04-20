@@ -1,11 +1,16 @@
 
-export default function App({
-  Component,
-  pageProps: { session, ...pageProps },
-}) {
+import { NextAuthProvider } from 'next-auth/react'
+import { SessionProvider } from "next-auth/react"
+import LoginPage from '../app/login/page'
+
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
-    <SessionProvider session={session}>
-      <Component {...pageProps} />
-    </SessionProvider>
+    <NextAuthProvider session={session}>
+      <SessionProvider session={session}>
+        <LoginPage {...pageProps} />
+      </SessionProvider>
+    </NextAuthProvider>
   )
-};
+}
+
+export default MyApp
