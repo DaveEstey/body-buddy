@@ -6,7 +6,7 @@ import Hero from "../assets/barbell.jpg";
 import "./WorkoutStyles.css";
 import Image from "next/image";
 import WorkoutEditCard from "../components/WorkoutEditCard";
-import { FaTimes } from "react-icons/fa";
+import Link from "next/link";
 
 const WorkoutPage = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -51,19 +51,15 @@ const WorkoutPage = () => {
     setFormData(newFormData);
   };
 
-  const handleDeleteCard = () => {
-
-  }
-
-  // const redirectPage = () => {
-  //  if (formData)
-  // else prompt("You need to Name and add an exercise to the wrokout!");
-  // }
+  const handleDeleteCard = (index) => {
+    console.log(index);
+    const newFormData = [...formData];
+    const indexNum = Number(index);
+    newFormData.splice(indexNum, 1);
+    setFormData(newFormData);
+  };
 
   const handleWorkoutSubmit = async () => {
-    if (!formData || !workoutTitle) {
-      return;
-    }
     try {
       const res = await fetch("/api/workouts", {
         method: "POST",
@@ -77,7 +73,7 @@ const WorkoutPage = () => {
         }),
       });
       const data = await res.json();
-      window.location.href("/profile");
+      console.log(data);
     } catch (error) {
       console.error(error);
     }
@@ -136,21 +132,15 @@ const WorkoutPage = () => {
                       handleSetChange={handleSetChange}
                       handleRepChange={handleRepChange}
                       handleWeightChange={handleWeightChange}
+                      handleDeleteCard={handleDeleteCard}
                     />
-                    <div className={index} onClick= {(e) => handleDeleteCard(e.index)}>
-                      <FaTimes size={20} style={{ color: "#000" }} />
-                    </div>
-                </>
+                  </>
                 );
               })}
-            {buttonShow && (
-              <button
-                onClick={() => {
-                  handleWorkoutSubmit();
-                }}
-              >
+            { formData && workoutTitle && (
+              <Link href="/profile" onClick={() => handleWorkoutSubmit()}>
                 Submit Workout
-              </button>
+              </Link>
             )}
           </div>
         </div>
@@ -160,19 +150,14 @@ const WorkoutPage = () => {
               repo.map((val, index) => {
                 return (
                   <>
-                    <button
-                      value={index}
-                      onClick={() => {
-                        handleCardClick(val.name), showButton(true);
-                      }}
-                    >
-                      <ExerciseCard
-                        key={index}
-                        name={val.name}
-                        type={val.type}
-                        muscle={val.muscle}
-                      />
-                    </button>
+                    <ExerciseCard
+                      key={index}
+                      name={val.name}
+                      type={val.type}
+                      muscle={val.muscle}
+                      handleCardClick={handleCardClick}
+                      showButton={showButton}
+                    />
                   </>
                 );
               })}
