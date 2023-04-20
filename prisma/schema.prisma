@@ -18,8 +18,8 @@ model users {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   password    String? /// @encrypted
   age         Int?
-  email       String
-  userName    String
+  email       String @unique
+  userName    String 
   height      Int?
   sex         String?
   weight      Int?

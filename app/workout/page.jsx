@@ -6,17 +6,19 @@ import Hero from "../assets/barbell.jpg";
 import "./WorkoutStyles.css";
 import Image from "next/image";
 import WorkoutEditCard from "../components/WorkoutEditCard";
-import { NextResponse } from "next/server";
+import Link from "next/link";
 
 const WorkoutPage = () => {
   const [searchInput, setSearchInput] = useState("");
   const [repo, setRepo] = useState([]);
   const [formData, setFormData] = useState([]);
   const [buttonShow, showButton] = useState(null);
+  const [workoutTitle, setWorkoutTitle] = useState("");
 
   const handleSearch = async () => {
     if (!searchInput) return;
     const userInput = searchInput.trim();
+
     const data = await fetch(
       `https://api.api-ninjas.com/v1/exercises?muscle=${userInput}`,
       {
@@ -49,6 +51,14 @@ const WorkoutPage = () => {
     setFormData(newFormData);
   };
 
+  const handleDeleteCard = (index) => {
+    console.log(index);
+    const newFormData = [...formData];
+    const indexNum = Number(index);
+    newFormData.splice(indexNum, 1);
+    setFormData(newFormData);
+  };
+
   const handleWorkoutSubmit = async () => {
     try {
       const res = await fetch("/api/workouts", {
@@ -57,7 +67,7 @@ const WorkoutPage = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: "My Workout",
+          name: workoutTitle,
           exercises: formData,
           userId: "643c2fd2b8b809c22b6cc7f2",
         }),
@@ -67,8 +77,6 @@ const WorkoutPage = () => {
     } catch (error) {
       console.error(error);
     }
-    console.log(formData);
-    console.log(JSON.stringify(formData));
   };
 
   return (
@@ -102,10 +110,21 @@ const WorkoutPage = () => {
               <div className="border full-rounded" />
             </button>
           </div>
+          {buttonShow && (
+            <>
+              <h2>Choose Workout Title</h2>
+              <input
+                value={workoutTitle}
+                type="string"
+                onChange={(e) => setWorkoutTitle(e.target.value)}
+              />
+            </>
+          )}
           <div>
             {formData &&
               formData.map((val, index) => {
                 return (
+                  <>
                     <WorkoutEditCard
                       key={index}
                       index={index}
@@ -113,13 +132,15 @@ const WorkoutPage = () => {
                       handleSetChange={handleSetChange}
                       handleRepChange={handleRepChange}
                       handleWeightChange={handleWeightChange}
+                      handleDeleteCard={handleDeleteCard}
                     />
+                  </>
                 );
               })}
-            {buttonShow && (
-              <button onClick={() => handleWorkoutSubmit()}>
+            { formData && workoutTitle && (
+              <Link href="/profile" onClick={() => handleWorkoutSubmit()}>
                 Submit Workout
-              </button>
+              </Link>
             )}
           </div>
         </div>
@@ -128,19 +149,16 @@ const WorkoutPage = () => {
             {repo &&
               repo.map((val, index) => {
                 return (
-                    <button
-                      value={index}
-                      onClick={() => {
-                        handleCardClick(val.name), showButton(true);
-                      }}
-                    >
-                      <ExerciseCard
-                        key={index}
-                        name={val.name}
-                        type={val.type}
-                        muscle={val.muscle}
-                      />
-                    </button>
+                  <>
+                    <ExerciseCard
+                      key={index}
+                      name={val.name}
+                      type={val.type}
+                      muscle={val.muscle}
+                      handleCardClick={handleCardClick}
+                      showButton={showButton}
+                    />
+                  </>
                 );
               })}
           </div>
