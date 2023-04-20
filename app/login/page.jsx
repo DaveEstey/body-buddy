@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import './LoginPageStyles.css'
 import { useRouter } from 'next/navigation';
-import { signIn } from 'next-auth/client'
+import { signIn } from "next-auth/react";
 
 const LoginPage = () => {
   const router = useRouter();
