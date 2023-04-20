@@ -7,8 +7,8 @@ export async function POST(req) {
         console.log('getting body')
         const body = await req.json()
         console.log('body', body)
-        console.log(body.userName)
-        const { user, error } = await login(body.userName)
+        console.log(body.email)
+        const { user, error } = await login(body.email)
         if (error) throw new Error(error)
         console.log('user', user)
           if (user.password === body.password) {
