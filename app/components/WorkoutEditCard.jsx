@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { FaTimes } from "react-icons/fa";
+import dynamic from "next/dynamic";
 
 const WorkoutEditCard = (props) => {
   const {
@@ -57,4 +58,4 @@ const WorkoutEditCard = (props) => {
   );
 };
 
-export default WorkoutEditCard;
+export default dynamic (() => Promise.resolve(WorkoutEditCard), {ssr: false})
