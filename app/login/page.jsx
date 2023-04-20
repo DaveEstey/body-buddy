@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import './LoginPageStyles.css'
 import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/client'
 
 const LoginPage = () => {
   const router = useRouter();
@@ -49,58 +50,31 @@ const LoginPage = () => {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-  
-    try {
-      const response = await fetch('/api/users', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          userName: registrationData.name,
-          email: registrationData.email,
-          password: registrationData.password,
-        }),
-      });
-  
-      if (response.ok) {
-        const { user } = await response.json();
-        router.push('/profile');
-      } else {
-        const { error } = await response.json();
-        console.error(error);
-      }
-    } catch (error) {
-      console.error(error);
+    const response = await signIn('credentials', {
+      redirect: false,
+      email: registrationData.email,
+      password: registrationData.password,
+    });
+    if (response?.error) {
+      console.error(response.error);
+    } else {
+      router.push('/profile');
     }
-    console.log('button clicked');
   };
 
   const handleLogIn = async (e) => {
-    e.preventDefault()
-
-    try {
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          email: logInData.email,
-          password: logInData.password
-        })
-      })
-      if (response.ok) {
-        const { user } = await response.json()
-        router.push('/profile')
-      } else {
-        const { error } = await response.json()
-        console.error(error)
-      }
-    } catch (error) {
-      console.error(error)
+    e.preventDefault();
+    const response = await signIn('credentials', {
+      redirect: false,
+      email: logInData.email,
+      password: logInData.password,
+    });
+    if (response?.error) {
+      console.error(response.error);
+    } else {
+      router.push('/profile');
     }
-  }
+  };
 
   return (
     // Following form created by Florin Pop and posted at https://freefrontend.com/css-login-forms/ JavaScript refactored for React by Body Buddy dev team.
