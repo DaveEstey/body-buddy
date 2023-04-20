@@ -19,7 +19,7 @@ model users {
   password    String? /// @encrypted
   age         Int?
   email       String
-  userName    String
+  userName    String @unique
   height      Int?
   sex         String?
   weight      Int?
