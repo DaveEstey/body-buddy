@@ -2,10 +2,12 @@
 
 import { useState } from 'react';
 import './LoginPageStyles.css'
+import { useRouter } from 'next/navigation';
 
 const LoginPage = () => {
+  const router = useRouter();
 
-  const [isActive, setActive] = useState('false');
+  const [isActive, setActive] = useState(false);
   const [registrationData, setRegistrationData] = useState({
     name: '',
     email: '',
@@ -24,10 +26,20 @@ const LoginPage = () => {
   };
 
   const updateLogIn = (e) => {
-    setLogInData({
-      ...logInData,
-      [e.target.name]: e.target.value
-    });
+    const fieldName = e.target.name;
+    const fieldValue = e.target.value;
+    
+    if (fieldName === 'logInEmail') {
+      setLogInData({
+        ...logInData,
+        email: fieldValue
+      });
+    } else if (fieldName === 'logInPassword') {
+      setLogInData({
+        ...logInData,
+        password: fieldValue
+      });
+    }
   };
 
   const handleSwitch = (e) => {
@@ -39,8 +51,29 @@ const LoginPage = () => {
     e.preventDefault();
   }
 
-  const handleLogIn = (e) => {
-    e.preventDefault();
+  const handleLogIn = async (e) => {
+    e.preventDefault()
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: logInData.email,
+          password: logInData.password
+        })
+      })
+      if (response.ok) {
+        const { user } = await response.json()
+        router.push('/profile')
+      } else {
+        const { error } = await response.json()
+        console.error(error)
+      }
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (
