@@ -14,8 +14,12 @@ const ProfileWorkoutContainer = () => {
       .then((data) => setWorkouts(data.workouts))
       .catch((error) => console.error("Error fetching workouts:", error));
   }, []);
+  
+  for (let i = workouts.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [workouts[i], workouts[j]] = [workouts[j], workouts[i]];
+  }
 
-  // Limit the number of workouts to display
   const displayedWorkouts = workouts.slice(0, 4);
 
   return (

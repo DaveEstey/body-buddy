@@ -93,8 +93,8 @@ const WorkoutPage = () => {
       <div className="workout-container">
         <div className="col-1">
           <div className="search-bar">
-            <h2>Search the Exercise Database</h2>
-            <h3>Enter a muscle group in the box below.</h3>
+            <h2 className="center">Search the Exercise Database</h2>
+            <h3 className="center">Enter a muscle group in the box below.</h3>
             <input
               className="ex-search"
               type="text"
@@ -110,17 +110,19 @@ const WorkoutPage = () => {
               Search
               <div className="border full-rounded" />
             </button>
-          </div>
+         
           {buttonShow && (
             <>
-              <h2>Choose Workout Title</h2>
+              <h2 className= "center underline">Choose Workout Title</h2>
               <input
+                className="ex-search"
                 value={workoutTitle}
                 type="string"
                 onChange={(e) => setWorkoutTitle(e.target.value)}
               />
-            </>
+            </> 
           )}
+          </div>
           <>
             {formData &&
               formData.map((val, index) => {
@@ -139,8 +141,8 @@ const WorkoutPage = () => {
                 );
               })}
             { formData && workoutTitle && (
-              <Link href="/profile" onClick={() => handleWorkoutSubmit()}>
-                Submit Workout
+              <Link className= " center " href="/profile" onClick={() => handleWorkoutSubmit()}>
+                <button className= " btn full-rounded ex-button border" >Submit Workout</button> 
               </Link>
             )}
           </>
