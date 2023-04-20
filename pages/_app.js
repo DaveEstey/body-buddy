@@ -1,13 +1,13 @@
 import { NextAuthProvider } from 'next-auth/react'
-import { Provider } from 'next-auth/client'
-import LoginPage from '../components/LoginPage'
+import { SessionProvider } from "next-auth/react"
+import LoginPage from '../app/login/page'
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <NextAuthProvider session={session}>
-      <Provider session={session}>
+      <SessionProvider session={session}>
         <LoginPage {...pageProps} />
-      </Provider>
+      </SessionProvider>
     </NextAuthProvider>
   )
 }
