@@ -47,12 +47,38 @@ const LoginPage = () => {
     setActive(!isActive);
   };
 
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
-  }
+  
+    try {
+      const response = await fetch('/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userName: registrationData.name,
+          email: registrationData.email,
+          password: registrationData.password,
+        }),
+      });
+  
+      if (response.ok) {
+        const { user } = await response.json();
+        router.push('/profile');
+      } else {
+        const { error } = await response.json();
+        console.error(error);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+    console.log('button clicked');
+  };
 
   const handleLogIn = async (e) => {
     e.preventDefault()
+
     try {
       const response = await fetch('/api/login', {
         method: 'POST',
