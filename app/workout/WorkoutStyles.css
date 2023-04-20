@@ -11,13 +11,13 @@
 }
 
 .col-1 {
-  width: 25%;
+  width: 50%;
   padding: 0 10px;
   /* border: solid 1px; */
 }
 
 .col-2 {
-  width: 75%;
+  width: 50%;
   padding: 0 10px;
   /* border: solid 1px; */
 }
@@ -49,6 +49,17 @@
   width: 128px;
   align-self: center;
   cursor: pointer;
+}
+
+.center{
+  align-self: center;
+}
+
+.underline{
+  text-decoration: underline;
+}
+.flexRow{
+  flex-direction: row;
 }
 
 @media screen and (max-width: 660px) {
