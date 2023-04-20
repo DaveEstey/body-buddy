@@ -1,4 +1,5 @@
 import "./ExerciseCardStyles.css";
+import dynamic from "next/dynamic";
 
 const ExerciseCard = (props) => {
   const { handleCardClick, showButton, name, type, muscle} = props
@@ -19,4 +20,4 @@ const ExerciseCard = (props) => {
   );
 };
 
-export default ExerciseCard;
+export default dynamic (() => Promise.resolve(ExerciseCard), {ssr: false})

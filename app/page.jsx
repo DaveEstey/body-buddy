@@ -2,6 +2,7 @@ import MainHero from "./components/MainHero";
 import WorkoutContainer from "./components/WorkoutContainer";
 import LowerImage from "./components/LowerImage";
 // import { SessionProvider } from "next-auth/react"
+import dynamic from "next/dynamic";
 
 const HomePage = () => {
   return (
@@ -14,4 +15,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default dynamic (() => Promise.resolve(HomePage), {ssr: false})

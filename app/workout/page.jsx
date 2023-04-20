@@ -7,6 +7,7 @@ import "./WorkoutStyles.css";
 import Image from "next/image";
 import WorkoutEditCard from "../components/WorkoutEditCard";
 import Link from "next/link";
+import dynamic from 'next/dynamic'
 
 const WorkoutPage = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -120,11 +121,11 @@ const WorkoutPage = () => {
               />
             </>
           )}
-          <div>
+          <>
             {formData &&
               formData.map((val, index) => {
                 return (
-                  <>
+                 
                     <WorkoutEditCard
                       key={index}
                       index={index}
@@ -134,7 +135,7 @@ const WorkoutPage = () => {
                       handleWeightChange={handleWeightChange}
                       handleDeleteCard={handleDeleteCard}
                     />
-                  </>
+                 
                 );
               })}
             { formData && workoutTitle && (
@@ -142,14 +143,14 @@ const WorkoutPage = () => {
                 Submit Workout
               </Link>
             )}
-          </div>
+          </>
         </div>
         <div className="col-2">
           <div className="exercises">
             {repo &&
               repo.map((val, index) => {
                 return (
-                  <>
+                  
                     <ExerciseCard
                       key={index}
                       name={val.name}
@@ -158,7 +159,7 @@ const WorkoutPage = () => {
                       handleCardClick={handleCardClick}
                       showButton={showButton}
                     />
-                  </>
+                  
                 );
               })}
           </div>
@@ -168,4 +169,4 @@ const WorkoutPage = () => {
   );
 };
 
-export default WorkoutPage;
+export default dynamic (() => Promise.resolve(WorkoutPage), {ssr: false})
