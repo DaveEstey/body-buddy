@@ -36,6 +36,10 @@ header {
   z-index: -1;
 }
 
+.lower-image-container {
+  height: 665px;
+}
+
 
 .lower-image {
   line-height: 0px;
@@ -112,6 +116,10 @@ header {
 
   .workout-planner {
     width: 80vw;
-    margin-top: 5rem;
+    margin-top: -6rem;
+  }
+
+  .lower-image-container {
+    height: 619px;
   }
 }
