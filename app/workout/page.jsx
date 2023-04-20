@@ -142,7 +142,15 @@ const WorkoutPage = () => {
               })}
             { formData && workoutTitle && (
               <Link className= " center " href="/profile" onClick={() => handleWorkoutSubmit()}>
-                <button className= " btn full-rounded ex-button border" >Submit Workout</button> 
+                {/* <button className= " btn full-rounded ex-button border" >Submit Workout</button> */}
+                <button
+                  className="btn full-rounded ex-button border"
+                  type="submit"
+                  onClick={handleSearch}
+                >
+                  Submit
+                  <div className="border full-rounded" />
+                </button>
               </Link>
             )}
           </>
