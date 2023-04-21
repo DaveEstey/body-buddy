@@ -57,8 +57,8 @@ Deployed Website - https://body-buddy.herokuapp.com/
   
 ## Usage
 
-  Development: npm run dev
-  Using: npm run build && npm run start
+  - Development: npm run dev
+  - Using: npm run build && npm run start
 
 ## Technology Used
 
