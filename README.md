@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Body-buddy
 
-## Getting Started
+# Description :
+ 
+Body buddy is a workout app intended to keep you organised and see your progress when it comes to working out. Additionally you can find new exercises and create new workouts to use on your next day at the gym! This application was built with Next.js V13.2, so it is ever changing along with the advancements with Next. Stay tuned!  
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+  [Tasks Completed](#TasksCompleted)
+  [Link](#Link)
+  [Screenshots](#Screenshots)
+  [Installation](#Installation)
+  [Usage](#Usage)
+  [Technology-Used](#TechnologyUsed)
+  [License](#License)
+  [Credit](#Credit)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.js`.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Tasks Completed
 
-## Learn More
+- The user is able to login if the user is a returning user.
 
-To learn more about Next.js, take a look at the following resources:
+- User can register on home page using name, email and password if first time user.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Can create Workouts stored on a MongoDB server.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Can view a profile with Workouts they have added to their profile.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Link
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+Repository URL  - https://github.com/DaveEstey/body-buddy/
+
+Deployed Website - https://body-buddy.herokuapp.com/
+
+## Screenshots
+
+![Homepage](https://user-images.githubusercontent.com/114950818/233516080-610a368c-ce57-4f40-b48b-ee409989af6a.png)
+
+![Sign-in](https://user-images.githubusercontent.com/114950818/233516320-c0737fba-c90f-4be4-94c9-6cd7432107ed.png)
+
+![Profile](https://user-images.githubusercontent.com/114950818/233516696-17d2317f-5a2a-4523-8d4c-d00aaf3a36ba.png)
+
+![Workout](https://user-images.githubusercontent.com/114950818/233516503-019a5562-cbb2-4c75-82fd-d29b63cd197d.png)
+
+
+
+## Installation
+
+  npm i
+  npx generate prisma
+  
+## Usage
+
+  Development: npm run dev
+  Using: npm run build && npm run start
+
+## Technology Used
+
+* [![Next][Next.js]][Next-url]
+* [![React][React.js]][React-url]
+* Prisma
+* freefrontend.com
+
+## License
+
+N/A
+
+## Credit
+
+[David Estey](https://github.com/DaveEstey) - Back-End and Third Party API
+[Brian Wyatt](https://github.com/Meduion) - Front-End
+[Devin Kearny](https://github.com/Friduwulf) - Server and Routing
+[Maxim Belenciuc](https://github.com/1nscape) - Authentication
