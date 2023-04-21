@@ -28,6 +28,8 @@ Body buddy is a workout app intended to keep you organised and see your progress
 
 - Can view a profile with Workouts they have added to their profile.
 
+- All future routes and structure with prisma ready for additional developments
+
 
 ## Link
 
