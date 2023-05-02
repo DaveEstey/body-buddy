@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import './LoginPageStyles.css'
 import { useRouter } from 'next/navigation';
+import { useCookies } from 'react-cookie';
 
 const LoginPage = () => {
   const router = useRouter();
+  const [cookies, setCookie] = useCookies(['user']);
 
   const [isActive, setActive] = useState(false);
   const [registrationData, setRegistrationData] = useState({
@@ -92,11 +94,16 @@ const LoginPage = () => {
       })
       if (response.ok) {
         const { user } = await response.json()
+        console.log(response.json())
         router.push('/profile')
       } else {
         const { error } = await response.json()
-        console.error(error)
       }
+      setCookie("user", JSON.stringify(data), {
+        path: "/",
+        maxAge: 3600,
+        sameSite: true,
+      })
     } catch (error) {
       console.error(error)
     }

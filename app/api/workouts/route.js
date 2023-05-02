@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
 import { createWorkout, getWorkouts } from '../../../lib/prisma/workouts'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '../auth/[...nextauth]/route'
 
 export async function GET() {
     console.log("Calling method to get all workouts")
@@ -14,7 +16,11 @@ export async function GET() {
 }
 
 export async function POST(req) {
+    const session = await getServerSession({ req, ...authOptions })
     console.log("Calling method to create a new workout")
+    if (!session) {
+        return NextResponse.json({ error: 'Unauthorized' })
+    }
     try {
         const body = await req.json()
         const { workout, error } = await createWorkout(body)
