@@ -8,8 +8,20 @@ import Image from "next/image";
 import WorkoutEditCard from "../components/WorkoutEditCard";
 import Link from "next/link";
 import dynamic from 'next/dynamic'
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
 const WorkoutPage = () => {
+  const { data: session } = useSession({
+    required: true,
+    onUnauthenticated() {
+      redirect('/login?callbackUrl=/workout')
+      }
+      
+    }) 
+    console.log("this is session data", session)
+  
+  
   const [searchInput, setSearchInput] = useState("");
   const [repo, setRepo] = useState([]);
   const [formData, setFormData] = useState([]);
