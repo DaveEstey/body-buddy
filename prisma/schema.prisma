@@ -14,6 +14,36 @@ type WorkoutsExercises {
   weight  Int
 }
 
+model Account {
+  id                 String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId             String  @map("user_id") @db.ObjectId
+  type               String
+  provider           String
+  providerAccountId  String  @map("provider_account_id")
+  refresh_token      String? @db.String
+  access_token       String? @db.String
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String? @db.String
+  session_state      String?
+
+  user users @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id") @db.ObjectId
+  expires      DateTime
+  user         users     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
 model users {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   password    String? /// @encrypted
@@ -24,6 +54,8 @@ model users {
   sex         String?
   weight      Int?
   workouts    workouts[]
+  accounts    Account[]
+  sessions    Session[]
 }
 
 model workouts {
