@@ -19,7 +19,7 @@ export const authOptions = {
         PrismaAdapter(prisma),
     ],
      pages: {
-        signIn: "/signin",
+        signIn: "/login",
      }
     }
 
