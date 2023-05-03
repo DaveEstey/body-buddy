@@ -6,6 +6,7 @@ import Link from "next/link";
 import ProfileWorkoutContainer from "../components/ProfileWorkoutContainer";
 import dynamic from 'next/dynamic'
 import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
 const ProfilePage = () => {
   const { data: session } = useSession({
