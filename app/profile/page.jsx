@@ -5,12 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 import ProfileWorkoutContainer from "../components/ProfileWorkoutContainer";
 import dynamic from 'next/dynamic'
+import { useSession } from "next-auth/react";
 
 const ProfilePage = () => {
+  const { data: session } = useSession({
+    required: true,
+    onUnauthenticated() {
+      redirect('/login?callbackUrl=/profile')
+      }
+    })
+    const user = session?.user.name;
+    console.log("this is session data", session)
   return (
     <>
       <div className="top-bar">
-        <h1>Devin</h1> {/* will be user.name for database call  */}
+        <h1>{user}</h1> {/* will be user.name for database call  */}
         <div className="stats-container">
           <div className="stats">
             <h2>37</h2> {/* will be user.age for database call  */}

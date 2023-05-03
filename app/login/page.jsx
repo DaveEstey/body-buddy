@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import './LoginPageStyles.css'
 import { useRouter } from 'next/navigation';
+import GoogleSignIn from 'app/components/GoogleSignIn';
 
 const LoginPage = () => {
   const router = useRouter();
@@ -65,7 +66,6 @@ const LoginPage = () => {
   
       if (response.ok) {
         const { user } = await response.json();
-        router.push('/profile');
       } else {
         const { error } = await response.json();
         console.error(error);
@@ -140,6 +140,7 @@ const LoginPage = () => {
               <input type="password" id="logInPassword" name="logInPassword" value={logInData.password} onChange={updateLogIn}/>
               {/* <a href="#">Forgot your password?</a> */}
               <button className="sign-in-btn">Sign In</button>
+              <GoogleSignIn />
             </form>
           </div>
           <div className="overlay-container">
