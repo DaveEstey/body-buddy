@@ -36,7 +36,7 @@ Body buddy is a workout app intended to keep you organised and see your progress
 
 Repository URL  - https://github.com/DaveEstey/body-buddy/
 
-Deployed Website - https://body-buddy.herokuapp.com/
+Deployed Website - (Can be re-deployed upon request) https://body-buddy.herokuapp.com/
 
 ## Screenshots
 
